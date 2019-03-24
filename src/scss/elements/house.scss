@@ -1,0 +1,70 @@
+.residential-complex__functionality {
+    width: 665px;
+    padding: 0 58px;
+
+    background-color: pink;
+}
+
+.house {
+    width: 460px;
+    padding: 0 58px;
+
+    &__roof {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__floor {
+        padding: 0 35px;
+
+        &:nth-child(odd) {
+            background: linear-gradient(var(--mustart) 0%, var(--yellow) 100%);
+        }
+
+        &:nth-child(even) {
+            background: linear-gradient(var(--yellow) 0%, var(--mustart) 100%);
+        }
+    }
+
+    &__flats {
+        display: flex;
+    }
+
+    &__flat {
+        width: 98px;
+        height: 88px;
+        margin: 18px;
+        box-sizing: border-box;
+
+        border: 4px solid var(--dark-brown);
+        border-radius: 4px;
+        background-color: var(--snowy);
+        // transform: rotate(-90deg);
+
+        & svg {
+            position: relative;
+            top: 25%;
+            
+            display: block;
+            margin: auto;
+        }
+    }
+}
+
+.roof-part {
+
+    &_upper {
+        width: calc(460px - 13px * 2);
+        height: 32px;
+
+        background-color: var(--chocolate);
+    }
+
+    &_lower {
+        width: calc(460px - 22px * 2);
+        height: 13px;
+
+        background-color: var(--dark-brown);
+    }
+}

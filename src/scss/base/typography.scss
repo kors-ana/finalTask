@@ -1,0 +1,43 @@
+.h1 {
+    font-size: 56px;
+    line-height: 66px;
+}
+
+.h2 {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.text {
+
+    &_16 {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    &_18 {
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    &_20 {
+        font-size: 20px;
+        line-height: 23px;
+    }
+    
+    &_plumbeous {
+        color: var(--plumbeous);
+    }
+
+    &_dark-grey {
+        color: var(--dark-grey);
+    }
+
+    &_white {
+        color: var(--white);
+    }
+
+    &_black {
+        color: var(--black);
+    }
+}
