@@ -199,8 +199,142 @@
             </div>
 
             <div class="add-resident popup__add-resident">
-                
+                <h2 class="h2 add-resident__title">Добавить жителя</h2>
+
+                <div class="resident-info-name resident-info">
+                    <label class="resident-name__text" for="name">Имя</label>
+                    <input type="text" id="name">
+                </div>
+
+                <div class="resident-info-sex resident-info">
+                    <span>Пол</span>
+
+                    <div class="resident-info-sex__wrapper">
+                        <div class="resident-info-sex__container">
+                            <input type="radio" id="male" name='sex' value="male" class="resident-info-sex__variant">
+                            <label class="resident-info-sex__text" for="male">Мужской</label>
+                        </div>
+                        
+                        <div class="resident-info-sex__container">
+                            <input type="radio" id="female" name='sex' value="female" class="resident-info-sex__variant" checked>
+                            <label class="resident-info-sex__text" for="female">Женский</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resident-info-floor resident-info">
+                    <label class="resident-floor__text" for="floor">Этаж</label>
+                    <input type="number" id="floor">
+                </div>
+
+                <div class="resident-info-rooms resident-info">
+                    <label class="resident-rooms__text" for="rooms">Кол-во комнат</label>
+                    <select name="rooms" id="rooms">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                    </select>
+                </div>
+
+                <div class="resident-info-additional resident-info">
+                    <span>Дополнительно</span>
+
+                    <div class="resident-info-additional__wrapper">
+                        <div class="resident-info-additional__container">
+                            <input type="checkbox" id="animals" name='additional' value="animals" class="resident-info-additional__variant" checked>
+                            <label class="resident-info-additional__text" for="animals">Домашние животные</label>
+                        </div>
+                        <div class="resident-info-additional__container">
+                            <input type="checkbox" id="tv" name='additional' value="tv" class="resident-info-additional__variant">
+                            <label class="resident-info-additional__text" for="tv">ТВ</label>
+                        </div>
+
+                        <div class="resident-info-additional__container">
+                            <input type="checkbox" id="internet" name='additional' value="internet" class="resident-info-additional__variant">
+                            <label class="resident-info-additional__text" for="internet">Интернет</label>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="resident-info-quantity resident-info">
+                    <label class="resident-quantity__text" for="quantity">Сколько человек проживает</label>
+                    <select name="rooms" id="quantity">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                    </select>
+                </div>
             </div>
+
+            <div class="filter popup__filter">
+                    <h2 class="h2 filter__title">Добавить жителя</h2>
+    
+                    <div class="resident-info-name resident-info">
+                        <label class="resident-name__text" for="name">Имя</label>
+                        <input type="text" id="name">
+                    </div>
+    
+                    <div class="resident-info-sex resident-info">
+                        <span>Пол</span>
+    
+                        <div class="resident-info-sex__wrapper">
+                            <div class="resident-info-sex__container">
+                                <input type="radio" id="male" name='sex' value="male" class="resident-info-sex__variant">
+                                <label class="resident-info-sex__text" for="male">Мужской</label>
+                            </div>
+                            
+                            <div class="resident-info-sex__container">
+                                <input type="radio" id="female" name='sex' value="female" class="resident-info-sex__variant" checked>
+                                <label class="resident-info-sex__text" for="female">Женский</label>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="resident-info-floor resident-info">
+                        <label class="resident-floor__text" for="floor">Этаж</label>
+                        <input type="number" id="floor">
+                    </div>
+    
+                    <div class="resident-info-rooms resident-info">
+                        <label class="resident-rooms__text" for="rooms">Кол-во комнат</label>
+                        <select name="rooms" id="rooms">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                        </select>
+                    </div>
+    
+                    <div class="resident-info-additional resident-info">
+                        <span>Дополнительно</span>
+    
+                        <div class="resident-info-additional__wrapper">
+                            <div class="resident-info-additional__container">
+                                <input type="checkbox" id="animals" name='additional' value="animals" class="resident-info-additional__variant" checked>
+                                <label class="resident-info-additional__text" for="animals">Домашние животные</label>
+                            </div>
+                            <div class="resident-info-additional__container">
+                                <input type="checkbox" id="tv" name='additional' value="tv" class="resident-info-additional__variant">
+                                <label class="resident-info-additional__text" for="tv">ТВ</label>
+                            </div>
+    
+                            <div class="resident-info-additional__container">
+                                <input type="checkbox" id="internet" name='additional' value="internet" class="resident-info-additional__variant">
+                                <label class="resident-info-additional__text" for="internet">Интернет</label>
+                            </div>
+                            
+                        </div>
+                    </div>
+    
+                    <div class="resident-info-quantity resident-info">
+                        <label class="resident-quantity__text" for="quantity">Сколько человек проживает</label>
+                        <select name="rooms" id="quantity">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                        </select>
+                    </div>
+                </div>
         </div>
     </div>
     <script src="main.js"></script>

@@ -1,0 +1,115 @@
+.add-resident {
+    width: 640px;
+
+    border-radius: 5px;
+    box-shadow: 0px 24px 44px rgba(0, 0, 0, 0.1);
+
+    &__title {
+        padding: 25px 0 25px 35px;
+        border-bottom: 1px solid var(--light-grey);
+    }
+}
+
+.resident-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 35px;
+    box-sizing: border-box;
+
+    & input[type="text"], & input[type="number"], & select {
+        width: 426px;
+        padding: 15px 25px;
+        box-sizing: border-box;
+
+        border: 1px solid #47A4F7;
+        border-radius: 100px;
+    }
+
+    &-sex {
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            width: 426px;
+            height: 50px;
+            margin: 22px 0;
+        
+            border: 1px solid var(--grey);
+            border-radius: 100px;
+        }
+
+        &__container {
+            width: 50%;
+        }
+
+        &__variant {
+            &:checked + .resident-info-sex__text {
+                background: linear-gradient(180deg, var(--cornflower-blue) 0%, var(--blue) 100%);
+                box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05);
+                border-radius: 100px;
+                border: 2px solid var(--blue);
+            }
+        }
+
+        &__text {
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+    
+            text-align: center;
+        }
+    }
+
+    &-additional {
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 426px;
+        }
+
+        &__container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &__variant {
+            display: none;
+
+            &:checked + .resident-info-additional__text:after {
+                content: '';
+                position: absolute;
+                left: 3px;
+
+                width: 19px;
+                height: 19px;
+
+                background: linear-gradient(180deg, var(--cornflower-blue) 0%, var(--blue) 100%);
+                box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05);
+                border-radius: 100px;
+            }
+        }
+
+        &__text {
+            position: relative;
+            
+            padding-left: 40px;
+
+            &:before {
+                content: '';
+
+                position: absolute;
+                top: -3px;
+                left: 0;
+
+                display: block;
+                width: 25px;
+                height: 25px;
+
+                border: 1px solid #E4EAEE;
+                box-sizing: border-box;
+                border-radius: 100px;
+            }
+        }
+    }
+}
