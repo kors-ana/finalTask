@@ -1,0 +1,39 @@
+.switcher {
+    margin: 0 auto;
+  }
+  
+.switcher-checkbox {
+    all: inherit;
+    width: 133px;
+    height: 50px;
+    background: var(--sky-blue);
+    outline: none;
+    border-radius: 50px;
+    box-shadow: inset 0 0 5px rgba(0,0,0, .2);
+    transition: 0.5s;
+    position: relative;
+}
+.switcher-checkbox:checked{
+    background: var(--night-blue);
+}
+
+input:checked[type="checkbox"] .roof-paer_upper {
+    background-color: var(--black);
+}
+
+.switcher-checkbox::before {
+    content: '';
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0, .2);
+    transition: 0.5s;
+}
+.switcher-checkbox:checked::before {
+    left: 65%;
+}

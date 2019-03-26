@@ -1,0 +1,33 @@
+.popup-toggler {
+    display: flex;
+    align-items: center;
+    width: 426px;
+    height: 50px;
+    margin: 22px 0;
+
+    border: 1px solid var(--grey);
+    border-radius: 100px;
+}
+
+.popup-variant {
+    display: none;
+
+    &__text {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+
+        text-align: center;
+    }
+    
+    &:checked + .popup-variant__text {
+        background: linear-gradient(180deg, var(--cornflower-blue) 0%, var(--blue) 100%);
+        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05);
+        border-radius: 100px;
+        border: 2px solid var(--blue);
+    }
+
+    &__container {
+        width: 50%;
+    }
+}

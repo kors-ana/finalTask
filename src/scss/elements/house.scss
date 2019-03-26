@@ -6,7 +6,9 @@
 }
 
 .house {
-    width: 460px;
+    --roof-color: var(--chocolate);
+
+    width: 412px;
     padding: 0 58px;
 
     &__roof {
@@ -16,6 +18,8 @@
     }
 
     &__floor {
+        position: relative;
+
         padding: 0 35px;
 
         &:nth-child(odd) {
@@ -24,6 +28,34 @@
 
         &:nth-child(even) {
             background: linear-gradient(var(--yellow) 0%, var(--mustart) 100%);
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -25px;
+
+            display: block;
+            width: 25px;
+            height: 95px;
+
+            background: linear-gradient(to top, var(--dark-brown) 37%, transparent 37%), 
+            linear-gradient(to left, var(--brown) 30%, transparent 30%);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: -25px;
+            
+            display: block;
+            width: 25px;
+            height: 95px;
+
+            background: linear-gradient(to top, var(--dark-brown) 37%, transparent 37%), 
+            linear-gradient(to right, var(--brown) 30%, transparent 30%);
         }
     }
 
@@ -50,6 +82,11 @@
             margin: auto;
         }
     }
+
+    &__footer {
+        margin-top: 5px;
+        margin-bottom: 20px;
+    }
 }
 
 .roof-part {
@@ -58,7 +95,7 @@
         width: calc(460px - 13px * 2);
         height: 32px;
 
-        background-color: var(--chocolate);
+        background-color: var(--roof-color);
     }
 
     &_lower {
