@@ -1,4 +1,5 @@
 .add-resident {
+    display: none;
     width: 640px;
 
     border-radius: 5px;
@@ -7,6 +8,31 @@
     &__title {
         padding: 25px 0 25px 35px;
         border-bottom: 1px solid var(--light-grey);
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: space-between;
+        padding: 25px 35px;
+    }
+
+    &__btn {
+        padding: 15px;
+
+        box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.05);
+        border-radius: 100px;
+
+        &_reset {
+            width: 209px;
+
+            background: var(--grey);
+        }
+
+        &_add {
+            width: 341px;
+
+            background: linear-gradient(180deg, var(--cornflower-blue) 0%, var(--blue) 100%);
+        }
     }
 }
 

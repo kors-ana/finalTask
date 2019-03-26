@@ -187,12 +187,12 @@
         <div class="residential-complex__functionality">
             <h1 class="h1">ЖК от Винта</h1>
             <div class="popup-toggler">
-                <div class="popup-variant__container">
+                <div class="popup-variant__container popup-variant_add-resident">
                     <input type="radio" id="add-resident" name='house-functions' value="resident" class="popup-variant" checked>
                     <label class="popup-variant__text" for="add-resident">Добавить жителя</label>
                 </div>
 
-                <div class="popup-variant__container">
+                <div class="popup-variant__container popup-variant_filter">
                     <input type="radio" id="filter" name='house-functions' value="filter" class="popup-variant">
                     <label class="popup-variant__text" for="filter">Фильтр</label>
                 </div>
@@ -265,76 +265,68 @@
                         <option value="3"></option>
                     </select>
                 </div>
+
+                <div class="add-resident__btns">
+                    <button class="add-resident__btn add-resident__btn_reset"><span>Сбросить</span></button>
+                    <button class="add-resident__btn add-resident__btn_add"><span>Добавить</span></button>
+                </div>
             </div>
 
             <div class="filter popup__filter">
-                    <h2 class="h2 filter__title">Добавить жителя</h2>
-    
-                    <div class="resident-info-name resident-info">
-                        <label class="resident-name__text" for="name">Имя</label>
-                        <input type="text" id="name">
-                    </div>
-    
-                    <div class="resident-info-sex resident-info">
-                        <span>Пол</span>
-    
-                        <div class="resident-info-sex__wrapper">
-                            <div class="resident-info-sex__container">
-                                <input type="radio" id="male" name='sex' value="male" class="resident-info-sex__variant">
-                                <label class="resident-info-sex__text" for="male">Мужской</label>
-                            </div>
-                            
-                            <div class="resident-info-sex__container">
-                                <input type="radio" id="female" name='sex' value="female" class="resident-info-sex__variant" checked>
-                                <label class="resident-info-sex__text" for="female">Женский</label>
-                            </div>
+                <h2 class="h2 filter__title">Фильтр</h2>
+
+                <div class="resident-info-sex resident-info">
+                    <span>Пол</span>
+
+                    <div class="resident-info-sex__wrapper">
+                        <div class="resident-info-sex__container">
+                            <input type="radio" id="filter-male" name='filter-sex' value="male" class="resident-info-sex__variant">
+                            <label class="resident-info-sex__text" for="filter-male">Мужской</label>
                         </div>
-                    </div>
-    
-                    <div class="resident-info-floor resident-info">
-                        <label class="resident-floor__text" for="floor">Этаж</label>
-                        <input type="number" id="floor">
-                    </div>
-    
-                    <div class="resident-info-rooms resident-info">
-                        <label class="resident-rooms__text" for="rooms">Кол-во комнат</label>
-                        <select name="rooms" id="rooms">
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                        </select>
-                    </div>
-    
-                    <div class="resident-info-additional resident-info">
-                        <span>Дополнительно</span>
-    
-                        <div class="resident-info-additional__wrapper">
-                            <div class="resident-info-additional__container">
-                                <input type="checkbox" id="animals" name='additional' value="animals" class="resident-info-additional__variant" checked>
-                                <label class="resident-info-additional__text" for="animals">Домашние животные</label>
-                            </div>
-                            <div class="resident-info-additional__container">
-                                <input type="checkbox" id="tv" name='additional' value="tv" class="resident-info-additional__variant">
-                                <label class="resident-info-additional__text" for="tv">ТВ</label>
-                            </div>
-    
-                            <div class="resident-info-additional__container">
-                                <input type="checkbox" id="internet" name='additional' value="internet" class="resident-info-additional__variant">
-                                <label class="resident-info-additional__text" for="internet">Интернет</label>
-                            </div>
-                            
+                        
+                        <div class="resident-info-sex__container">
+                            <input type="radio" id="filter-female" name='filter-sex' value="female" class="resident-info-sex__variant" checked>
+                            <label class="resident-info-sex__text" for="filter-female">Женский</label>
                         </div>
-                    </div>
-    
-                    <div class="resident-info-quantity resident-info">
-                        <label class="resident-quantity__text" for="quantity">Сколько человек проживает</label>
-                        <select name="rooms" id="quantity">
-                            <option value="1"></option>
-                            <option value="2"></option>
-                            <option value="3"></option>
-                        </select>
                     </div>
                 </div>
+
+                <div class="resident-info-rooms resident-info">
+                    <label class="resident-rooms__text" for="filter-rooms">Кол-во комнат</label>
+                    <select name="filter-rooms" id="filter-rooms">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                    </select>
+                </div>
+
+                <div class="resident-info-additional resident-info">
+                    <span>Дополнительно</span>
+
+                    <div class="resident-info-additional__wrapper">
+                        <div class="resident-info-additional__container">
+                            <input type="checkbox" id="filter-animals" name='filter-additional' value="animals" class="resident-info-additional__variant" checked>
+                            <label class="resident-info-additional__text" for="filter-animals">Домашние животные</label>
+                        </div>
+                        <div class="resident-info-additional__container">
+                            <input type="checkbox" id="filter-tv" name='filter-additional' value="tv" class="resident-info-additional__variant">
+                            <label class="resident-info-additional__text" for="filter-tv">ТВ</label>
+                        </div>
+
+                        <div class="resident-info-additional__container">
+                            <input type="checkbox" id="filter-internet" name='filter-additional' value="internet" class="resident-info-additional__variant">
+                            <label class="resident-info-additional__text" for="filter-internet">Интернет</label>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="resident-info-floor resident-info">
+                    <label class="resident-floor__text" for="filter-floor">Этаж</label>
+                    <input type="number" id="filter-floor">
+                </div>
+
+            </div>
         </div>
     </div>
     <script src="main.js"></script>

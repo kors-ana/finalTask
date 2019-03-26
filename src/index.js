@@ -1,2 +1,2 @@
 import "./scss/styles.scss";
-console.log('hello');
+import "./js/popup-toggler";

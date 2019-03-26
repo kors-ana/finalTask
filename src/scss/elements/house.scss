@@ -55,6 +55,17 @@
             background: linear-gradient(to top, var(--dark-brown) 37%, transparent 37%), 
             linear-gradient(to right, var(--brown) 30%, transparent 30%);
         }
+
+        &:hover  {
+            background: linear-gradient(180deg, #FCDE56 0%, #FFDD41 100%);
+        }
+
+        &:hover:before, &:hover:after {
+            height: 124px;
+
+            background: linear-gradient(180deg, #FCDE56 0%, #FFDD41 100%);
+        }
+
     }
 
     &__flats {
