@@ -30,3 +30,31 @@
     --dark-brown: #613007;
     --chocolate: #4D2D19;
 }
+
+:root[theme='light'] {
+    --roof_upper-color: var(--chocolate);
+    --roof_lower-color: var(--dark-brown);
+    --floor_odd-color: linear-gradient(var(--mustart) 0%, var(--yellow) 100%);
+    --floor_even-color: linear-gradient(var(--yellow) 0%, var(--mustart) 100%);
+    --floor_hover-color: linear-gradient(180deg, var(--mustart) 0%, var(--light-yellow) 100%);
+    --balcon_left: linear-gradient(to top, var(--dark-brown) 37%, transparent 37%), 
+    linear-gradient(to left, var(--brown) 30%, transparent 30%);
+    --balcon_right: linear-gradient(to top, var(--dark-brown) 37%, transparent 37%), 
+    linear-gradient(to right, var(--brown) 30%, transparent 30%);
+    --flat-borders-color: var(--dark-brown);
+    --flat-inside-color: var(--snowy);
+}
+
+:root[theme='dark'] {
+    --roof_upper-color: var(--bright-blue);
+    --roof_lower-color: var(--light-blue);
+    --floor_odd-color: linear-gradient(var(--pale-blue) 0%, var(--bright-blue) 100%);
+    --floor_even-color: linear-gradient(var(--bright-blue) 0%, var(--pale-blue) 100%);
+    --floor_hover-color: linear-gradient(180deg, var(--pale-blue) 0%, var(--bright-blue) 100%);
+    --balcon_left: linear-gradient(to top, var(--bright-blue) 37%, transparent 37%), 
+    linear-gradient(to left, var(--indigo) 30%, transparent 30%);
+    --balcon_right: linear-gradient(to top, var(--bright-blue) 37%, transparent 37%), 
+    linear-gradient(to right, var(--indigo) 30%, transparent 30%);
+    --flat-borders-color: var(--purple-blue);
+    --flat-inside-color: var(--pink);
+}

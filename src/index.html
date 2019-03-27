@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -182,23 +182,21 @@
             </div>
         </div>
 
-        
-
         <div class="residential-complex__functionality">
             <h1 class="h1">ЖК от Винта</h1>
             <div class="popup-toggler">
-                <div class="popup-variant__container popup-variant_add-resident">
+                <div class="popup-variant__container ">
                     <input type="radio" id="add-resident" name='house-functions' value="resident" class="popup-variant" checked>
-                    <label class="popup-variant__text" for="add-resident">Добавить жителя</label>
+                    <label class="popup-variant__text popup-variant_add-resident" for="add-resident">Добавить жителя</label>
                 </div>
 
-                <div class="popup-variant__container popup-variant_filter">
+                <div class="popup-variant__container">
                     <input type="radio" id="filter" name='house-functions' value="filter" class="popup-variant">
-                    <label class="popup-variant__text" for="filter">Фильтр</label>
+                    <label class="popup-variant__text popup-variant_filter" for="filter">Фильтр</label>
                 </div>
             </div>
 
-            <div class="add-resident popup__add-resident">
+            <div class="add-resident popup__add-resident active">
                 <h2 class="h2 add-resident__title">Добавить жителя</h2>
 
                 <div class="resident-info-name resident-info">
