@@ -201,7 +201,7 @@
 
                 <div class="resident-info-name resident-info">
                     <label class="resident-name__text" for="name">Имя</label>
-                    <input type="text" id="name">
+                    <input class="resident-name__field" type="text" id="name" value="">
                 </div>
 
                 <div class="resident-info-sex resident-info">
@@ -222,15 +222,17 @@
 
                 <div class="resident-info-floor resident-info">
                     <label class="resident-floor__text" for="floor">Этаж</label>
-                    <input type="number" id="floor">
+                    <input class="resident-floor__field" type="number" id="floor" value="">
                 </div>
 
                 <div class="resident-info-rooms resident-info">
                     <label class="resident-rooms__text" for="rooms">Кол-во комнат</label>
-                    <select name="rooms" id="rooms">
-                        <option value="1"></option>
-                        <option value="2"></option>
-                        <option value="3"></option>
+                    <select class="resident-rooms__field" name="rooms" id="rooms">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
                 </div>
 
@@ -257,10 +259,10 @@
 
                 <div class="resident-info-quantity resident-info">
                     <label class="resident-quantity__text" for="quantity">Сколько человек проживает</label>
-                    <select name="rooms" id="quantity">
-                        <option value="1"></option>
-                        <option value="2"></option>
-                        <option value="3"></option>
+                    <select class="resident-quantity__field" name="quantity" id="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                     </select>
                 </div>
 
