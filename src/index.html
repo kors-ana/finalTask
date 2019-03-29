@@ -18,7 +18,7 @@
             <ul class="house__floors">
                 <li class="house__floor">
                     <ul class="house__flats">
-                        <li class="house__flat">
+                        <li class="house__flat" id="1">
                             <svg width="53" height="60" viewBox="0 0 53 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.4217 13.2177V58.9851C26.4217 58.9851 0.659912 61.6772 0.659912 49.012C0.659912 49.012 7.57955 49.8916 6.16284 44.0713C4.36691 36.6926 5.37152 24.7425 6.16284 18.211C6.95416 11.6793 26.4217 13.2177 26.4217 13.2177Z" fill="#330C00"/>
                                 <path d="M26.3384 13.2177V58.9851C26.3384 58.9851 52.1002 61.6772 52.1002 49.012C52.1002 49.012 45.1806 49.8916 46.5973 44.0713C48.3932 36.6926 47.3886 24.7425 46.5973 18.211C45.8057 11.6793 26.3384 13.2177 26.3384 13.2177Z" fill="#330C00"/>
@@ -52,21 +52,21 @@
                                 <path d="M32.765 19.3246C32.765 19.3246 25.7243 22.8841 19.5066 22.1696C13.2892 21.4548 10.9011 27.9556 11.2806 32.2579L9.20557 22.6825L12.9574 15.1067L23.6495 9.55756L33.7526 10.0284L38.5439 14.224L42.6123 19.3246L45.4721 22.6825L44.0962 33.0159L41.1839 36.5482C41.1842 36.5482 43.8191 23.2903 32.765 19.3246Z" fill="#401900"/>
                             </svg>   
                         </li>
-                        <li class="house__flat"></li>
-                        <li class="house__flat"></li>
+                        <li class="house__flat" id="2"></li>
+                        <li class="house__flat" id="3"></li>
                     </ul>
                 </li>
                 <li class="house__floor">
                     <ul class="house__flats">
-                        <li class="house__flat"></li>
-                        <li class="house__flat"></li>
-                        <li class="house__flat"></li>
+                        <li class="house__flat" id="4"></li>
+                        <li class="house__flat" id="5"></li>
+                        <li class="house__flat" id="6"></li>
                     </ul>
                 </li>
                 <li class="house__floor">
                     <ul class="house__flats">
-                        <li class="house__flat"></li>
-                        <li class="house__flat">
+                        <li class="house__flat" id="7"></li>
+                        <li class="house__flat" id="8">
                             <svg width="53" height="60" viewBox="0 0 53 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26.4217 13.2177V58.9851C26.4217 58.9851 0.659912 61.6772 0.659912 49.012C0.659912 49.012 7.57955 49.8916 6.16284 44.0713C4.36691 36.6926 5.37152 24.7425 6.16284 18.211C6.95416 11.6793 26.4217 13.2177 26.4217 13.2177Z" fill="#330C00"/>
                                 <path d="M26.3384 13.2177V58.9851C26.3384 58.9851 52.1002 61.6772 52.1002 49.012C52.1002 49.012 45.1806 49.8916 46.5973 44.0713C48.3932 36.6926 47.3886 24.7425 46.5973 18.211C45.8057 11.6793 26.3384 13.2177 26.3384 13.2177Z" fill="#330C00"/>
@@ -100,21 +100,21 @@
                                 <path d="M32.765 19.3246C32.765 19.3246 25.7243 22.8841 19.5066 22.1696C13.2892 21.4548 10.9011 27.9556 11.2806 32.2579L9.20557 22.6825L12.9574 15.1067L23.6495 9.55756L33.7526 10.0284L38.5439 14.224L42.6123 19.3246L45.4721 22.6825L44.0962 33.0159L41.1839 36.5482C41.1842 36.5482 43.8191 23.2903 32.765 19.3246Z" fill="#401900"/>
                             </svg> 
                         </li>
-                        <li class="house__flat"></li>
+                        <li class="house__flat" id="9"></li>
                     </ul>
                 </li>
                 <li class="house__floor">
                     <ul class="house__flats">
-                        <li class="house__flat"></li>
-                        <li class="house__flat"></li>
-                        <li class="house__flat"></li>
+                        <li class="house__flat" id="10"></li>
+                        <li class="house__flat" id="11"></li>
+                        <li class="house__flat" id="12"></li>
                     </ul>
                 </li>
                 <li class="house__floor">
                     <ul class="house__flats">
-                        <li class="house__flat"></li>
-                        <li class="house__flat"></li>
-                        <li class="house__flat"></li>
+                        <li class="house__flat" id="13"></li>
+                        <li class="house__flat" id="14"></li>
+                        <li class="house__flat" id="15"></li>
                     </ul>
                 </li>
             </ul>
@@ -179,6 +179,37 @@
 
             <div class="switcher">
                 <input class="switcher-checkbox" type="checkbox">
+            </div>
+
+            <div class="resident-reference house__resident-reference">
+                <div class="resident-reference__container">
+                    <div class="resident-reference__title">
+                        <h2 class="resident-reference__name"></h2>
+                    </div>
+                    <div class="resident-reference__main">
+                        <div class="resident-reference__item">
+                            <h4 class="resident-reference__item-title"></h4>
+                            <span class="resident-reference__title-description"></span>
+                        </div>
+                        <div class="resident-reference__item">
+                            <h4 class="resident-reference__item-title"></h4>
+                            <span class="resident-reference__title-description"></span>
+                        </div>
+                        <div class="resident-reference__item">
+                            <h4 class="resident-reference__item-title"></h4>
+                            <span class="resident-reference__title-description"></span>
+                        </div>
+                        <div class="resident-reference__item">
+                            <h4 class="resident-reference__item-title"></h4>
+                            <span class="resident-reference__title-description"></span>
+
+                        </div>
+                        <div class="resident-reference__item">
+                            <h4 class="resident-reference__item-title"></h4>
+                            <span class="resident-reference__title-description"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

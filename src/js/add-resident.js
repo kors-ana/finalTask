@@ -1,5 +1,5 @@
-const store = [];
-store.length = 15;
+const store = [['','',''], [], [], [], []];
+
 
 function addResident(name, sex, floor, rooms, additional, quantity) {
     return {
@@ -34,12 +34,40 @@ addBtn.addEventListener('click', function(e) {
     const quantityField = addResidentPopup.querySelector('.resident-quantity__field');
     const quantity = quantityField.options[quantityField.selectedIndex].value;
 
-    console.log(store);
-    console.log(addBtn);
-    console.log(name);
-    console.log(sex);
-    console.log(floor);
-    console.log(rooms);
-    console.log(additional);
-    console.log(quantity);
+    let newPerson = addResident(name, sex, floor, rooms, additional, quantity);
+
+    if (store[floor - 1].length > 2) {
+        console.log('You cant do that. Its enought')
+    } else {
+        store[floor - 1] = newPerson;
+    }
+
+    const floors = document.querySelectorAll('.house__floor');
+
+    const houseFloor = floors[floor - 1];
+    const houseFlats = houseFloor.querySelectorAll('.house__flat');
+    const houseFlat = houseFlats[store[floor - 1].length - 1];
+    houseFlat.innerHTML = 'hello';
+    
+
+    // console.log(store);
+    // console.log(addBtn);
+    // console.log(name);
+    // console.log(sex);
+    // console.log(floor);
+    // console.log(rooms);
+    // console.log(additional);
+    // console.log(quantity);
+})
+
+const flats = document.querySelector('.house__floors');
+
+flats.addEventListener('click', function(e) {
+    let target = e.target;
+
+    if (target.classList.contains('house__flat')) {
+        let id = target.getAttribute('id');
+
+        let ourPerson = store[id]
+    }
 })
