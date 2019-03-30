@@ -1,18 +1,6 @@
+import createResident from './createResident';
+
 const store = [[], [], [], [], []];
-
-export default store;
-
-function addResident(name, icon, sex, floor, rooms, additional, quantity) {
-    return {
-        name: name,
-        icon: icon,
-        sex: sex,
-        floor: floor,
-        rooms: rooms,
-        additional: additional,
-        quantity: quantity
-    }
-}
 
 const addBtn = document.querySelector('.add-resident__btn_add');
 
@@ -33,20 +21,21 @@ addBtn.addEventListener('click', function(e) {
     const quantityField = addResidentPopup.querySelector('.resident-quantity__field');
     const quantity = quantityField.options[quantityField.selectedIndex].value;
     let icon = '<img src="./img/male.svg" alt="">';
-    // if(sex == 'female') {
-    //     const icon = '<img src="./img/female.svg" alt="">';
-    // }
+
     sex == 'Мужской' ? icon = '<img src="./img/male.svg" alt="">' : icon = '<img src="./img/female.svg" alt="">';
-    console.log(icon);
-    
+
     //создаем нового человека
-    let newPerson = addResident(name, icon, sex, floor, rooms, additional, quantity);
+    let newPerson = createResident(name, icon, sex, floor, rooms, additional, quantity);
 
     //проверяем, есть ли на этаже место
     if (store[floor - 1].length > 2) {
         console.log('You cant do that. Its enought')
     } else {
         store[floor - 1].push(newPerson);
+
+        newPerson = JSON.stringify(newPerson);
+        
+        localStorage.setItem(name, newPerson);
     }
 
     //получаем коллекцию всех этажей
@@ -64,15 +53,6 @@ addBtn.addEventListener('click', function(e) {
 
     //добавляем иконку человека в дом
     houseFlat.innerHTML = icon;
-    // sex == 'male' ? houseFlat.innerHTML = '<img src="./img/male.svg" alt="">' : houseFlat.innerHTML = '<img src="./img/female.svg" alt="">'
-    
-    console.log(store);
-    // console.log(store);
-    // console.log(addBtn);
-    // console.log(name);
-    // console.log(sex);
-    // console.log(floor);
-    // console.log(rooms);
-    // console.log(additional);
-    // console.log(quantity);
 })
+
+export default store;
