@@ -1,9 +1,11 @@
 const store = [[], [], [], [], []];
 
+export default store;
 
-function addResident(name, sex, floor, rooms, additional, quantity) {
+function addResident(name, icon, sex, floor, rooms, additional, quantity) {
     return {
         name: name,
+        icon: icon,
         sex: sex,
         floor: floor,
         rooms: rooms,
@@ -16,11 +18,8 @@ const addBtn = document.querySelector('.add-resident__btn_add');
 
 addBtn.addEventListener('click', function(e) {
     const addResidentPopup = document.querySelector('.add-resident');
-    // const fields = addResidentPopup.querySelectorAll('input, select');
-    // const values = [];
-    // for (let i = 0; i < fields.length; i++) {
-    //     values.push(fields[i].value);
-    // }
+
+    //собираем все значения с полей
     const name = addResidentPopup.querySelector('.resident-name__field').value;
     const sex = addResidentPopup.querySelector('.resident-info-sex__variant:checked').value;
     const floor = addResidentPopup.querySelector('.resident-floor__field').value;
@@ -33,14 +32,23 @@ addBtn.addEventListener('click', function(e) {
     }
     const quantityField = addResidentPopup.querySelector('.resident-quantity__field');
     const quantity = quantityField.options[quantityField.selectedIndex].value;
+    let icon = '<img src="./img/male.svg" alt="">';
+    // if(sex == 'female') {
+    //     const icon = '<img src="./img/female.svg" alt="">';
+    // }
+    sex == 'Мужской' ? icon = '<img src="./img/male.svg" alt="">' : icon = '<img src="./img/female.svg" alt="">';
+    console.log(icon);
+    
+    //создаем нового человека
+    let newPerson = addResident(name, icon, sex, floor, rooms, additional, quantity);
 
-    let newPerson = addResident(name, sex, floor, rooms, additional, quantity);
-
+    //проверяем, есть ли на этаже место
     if (store[floor - 1].length > 2) {
         console.log('You cant do that. Its enought')
     } else {
         store[floor - 1].push(newPerson);
     }
+
     //получаем коллекцию всех этажей
     const floors = document.querySelectorAll('.house__floor');
 
@@ -54,9 +62,11 @@ addBtn.addEventListener('click', function(e) {
     //его индекс lenght - 1 = квартире, в которую поселили человека
     const houseFlat = houseFlats[store[floor - 1].length - 1];
 
-    sex == 'male' ? houseFlat.innerHTML = '<img src="./img/male.svg" alt="">' : houseFlat.innerHTML = '<img src="./img/female.svg" alt="">'
+    //добавляем иконку человека в дом
+    houseFlat.innerHTML = icon;
+    // sex == 'male' ? houseFlat.innerHTML = '<img src="./img/male.svg" alt="">' : houseFlat.innerHTML = '<img src="./img/female.svg" alt="">'
     
-
+    console.log(store);
     // console.log(store);
     // console.log(addBtn);
     // console.log(name);
@@ -65,16 +75,4 @@ addBtn.addEventListener('click', function(e) {
     // console.log(rooms);
     // console.log(additional);
     // console.log(quantity);
-})
-
-const flats = document.querySelector('.house__floors');
-
-flats.addEventListener('click', function(e) {
-    let target = e.target;
-
-    if (target.classList.contains('house__flat')) {
-        let id = target.getAttribute('id');
-
-        let ourPerson = store[id]
-    }
 })
