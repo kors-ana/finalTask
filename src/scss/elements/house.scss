@@ -91,6 +91,14 @@
             display: block;
             margin: auto;
         }
+
+        & img {
+            position: relative;
+            top: 25%;
+            
+            display: block;
+            margin: auto;
+        }
     }
 
     &__footer {

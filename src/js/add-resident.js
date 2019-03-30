@@ -1,4 +1,4 @@
-const store = [['','',''], [], [], [], []];
+const store = [[], [], [], [], []];
 
 
 function addResident(name, sex, floor, rooms, additional, quantity) {
@@ -39,15 +39,22 @@ addBtn.addEventListener('click', function(e) {
     if (store[floor - 1].length > 2) {
         console.log('You cant do that. Its enought')
     } else {
-        store[floor - 1] = newPerson;
+        store[floor - 1].push(newPerson);
     }
-
+    //получаем коллекцию всех этажей
     const floors = document.querySelectorAll('.house__floor');
 
+    //получаем нужный нам этаж в доме
     const houseFloor = floors[floor - 1];
+
+    //получаем на этом этаже все квартиры
     const houseFlats = houseFloor.querySelectorAll('.house__flat');
+
+    //store[floor - 1] = нужному массиву
+    //его индекс lenght - 1 = квартире, в которую поселили человека
     const houseFlat = houseFlats[store[floor - 1].length - 1];
-    houseFlat.innerHTML = 'hello';
+
+    sex == 'male' ? houseFlat.innerHTML = '<img src="./img/male.svg" alt="">' : houseFlat.innerHTML = '<img src="./img/female.svg" alt="">'
     
 
     // console.log(store);
