@@ -11,6 +11,8 @@
     border-radius: 5px;
 
     &_active {
+        z-index: 1;
+        
         display: block;
     }
 

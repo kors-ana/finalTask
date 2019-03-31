@@ -1,6 +1,6 @@
 import createResident from './createResident';
+import store from './render';
 
-let store = [[], [], [], [], []];
 
 // localStorage.setItem("store", "[[], [], [], [], []]")
 
@@ -81,31 +81,3 @@ addBtn.addEventListener('click', function(e) {
     houseFlat.innerHTML = icon;
 })
 
-
-
-function render() {
-    const floors = document.querySelectorAll('.house__floor');
-    store = localStorage.getItem('store');
-    store = JSON.parse(store);
-    console.log(store);
-    if (store != undefined) {
-        for (let i = 0; i < store.length; i++) {
-
-            if (store[i].length > 0) {
-                for (let j = 0; j < store[i].length; j++) {
-                    let renderedFlat = floors[i].querySelectorAll('.house__flat')[j];
-                    console.log(j);
-                    console.log(store[i]);
-                    console.log(store[i][j]);
-                    renderedFlat.innerHTML =  store[i][j].icon
-                }
-            } 
-        }
-    }
-    return store;
-}
-
-render();
-
-
-export default store;

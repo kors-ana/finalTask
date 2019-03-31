@@ -4,6 +4,7 @@ import "./js/add-resident";
 import "./js/close-info-popup";
 import "./js/createResident";
 import "./js/fillInInfoPopup";
+import "./js/filter";
 import "./js/findOutFloor";
 import "./js/get-info";
 import "./js/open-info-popup";

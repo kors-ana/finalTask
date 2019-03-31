@@ -1,4 +1,4 @@
-import store from './add-resident';
+import store from './render';
 import openInfoPopup from './open-info-popup';
 import fillInInfoPopup from './fillInInfoPopup';
 

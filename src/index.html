@@ -233,77 +233,80 @@
             <div class="add-resident popup__add-resident active">
                 <h2 class="h2 add-resident__title">Добавить жителя</h2>
 
-                <div class="resident-info-name resident-info">
-                    <label class="resident-name__text" for="name">Имя</label>
-                    <input class="resident-name__field" type="text" id="name" value="">
-                </div>
+                <form action="">
 
-                <div class="resident-info-sex resident-info">
-                    <span>Пол</span>
+                    <div class="resident-info-name resident-info">
+                        <label class="resident-name__text" for="name">Имя</label>
+                        <input class="resident-name__field" type="text" id="name" value="">
+                    </div>
 
-                    <div class="resident-info-sex__wrapper">
-                        <div class="resident-info-sex__container">
-                            <input type="radio" id="male" name='sex' value="Мужской" class="resident-info-sex__variant">
-                            <label class="resident-info-sex__text" for="male">Мужской</label>
-                        </div>
-                        
-                        <div class="resident-info-sex__container">
-                            <input type="radio" id="female" name='sex' value="Женский" class="resident-info-sex__variant" checked>
-                            <label class="resident-info-sex__text" for="female">Женский</label>
+                    <div class="resident-info-sex resident-info">
+                        <span>Пол</span>
+
+                        <div class="resident-info-sex__wrapper">
+                            <div class="resident-info-sex__container">
+                                <input type="radio" id="male" name='sex' value="Мужской" class="resident-info-sex__variant">
+                                <label class="resident-info-sex__text" for="male">Мужской</label>
+                            </div>
+                            
+                            <div class="resident-info-sex__container">
+                                <input type="radio" id="female" name='sex' value="Женский" class="resident-info-sex__variant" checked>
+                                <label class="resident-info-sex__text" for="female">Женский</label>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="resident-info-floor resident-info">
-                    <label class="resident-floor__text" for="floor">Этаж</label>
-                    <input class="resident-floor__field" type="number" id="floor" value="">
-                </div>
-
-                <div class="resident-info-rooms resident-info">
-                    <label class="resident-rooms__text" for="rooms">Кол-во комнат</label>
-                    <select class="resident-rooms__field" name="rooms" id="rooms">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-
-                <div class="resident-info-additional resident-info">
-                    <span>Дополнительно</span>
-
-                    <div class="resident-info-additional__wrapper">
-                        <div class="resident-info-additional__container">
-                            <input type="checkbox" id="animals" name='additional' value="Домашние животные" class="resident-info-additional__variant" checked>
-                            <label class="resident-info-additional__text" for="animals">Домашние животные</label>
-                        </div>
-                        <div class="resident-info-additional__container">
-                            <input type="checkbox" id="tv" name='additional' value="ТВ" class="resident-info-additional__variant">
-                            <label class="resident-info-additional__text" for="tv">ТВ</label>
-                        </div>
-
-                        <div class="resident-info-additional__container">
-                            <input type="checkbox" id="internet" name='additional' value="Интернет" class="resident-info-additional__variant">
-                            <label class="resident-info-additional__text" for="internet">Интернет</label>
-                        </div>
-                        
+                    <div class="resident-info-floor resident-info">
+                        <label class="resident-floor__text" for="floor">Этаж</label>
+                        <input class="resident-floor__field" type="number" id="floor" value="">
                     </div>
-                </div>
 
-                <div class="resident-info-quantity resident-info">
-                    <label class="resident-quantity__text" for="quantity">Сколько человек проживает</label>
-                    <select class="resident-quantity__field" name="quantity" id="quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                </div>
+                    <div class="resident-info-rooms resident-info">
+                        <label class="resident-rooms__text" for="rooms">Кол-во комнат</label>
+                        <select class="resident-rooms__field" name="rooms" id="rooms">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
 
-                <div class="add-resident__btns">
-                    <button class="add-resident__btn add-resident__btn_reset"><span>Сбросить</span></button>
-                    <button class="add-resident__btn add-resident__btn_add"><span>Добавить</span></button>
-                </div>
+                    <div class="resident-info-additional resident-info">
+                        <span>Дополнительно</span>
+
+                        <div class="resident-info-additional__wrapper">
+                            <div class="resident-info-additional__container">
+                                <input type="checkbox" id="animals" name='additional' value="Домашние животные" class="resident-info-additional__variant" checked>
+                                <label class="resident-info-additional__text" for="animals">Домашние животные</label>
+                            </div>
+                            <div class="resident-info-additional__container">
+                                <input type="checkbox" id="tv" name='additional' value="ТВ" class="resident-info-additional__variant">
+                                <label class="resident-info-additional__text" for="tv">ТВ</label>
+                            </div>
+
+                            <div class="resident-info-additional__container">
+                                <input type="checkbox" id="internet" name='additional' value="Интернет" class="resident-info-additional__variant">
+                                <label class="resident-info-additional__text" for="internet">Интернет</label>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="resident-info-quantity resident-info">
+                        <label class="resident-quantity__text" for="quantity">Сколько человек проживает</label>
+                        <select class="resident-quantity__field" name="quantity" id="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+
+                    <div class="add-resident__btns">
+                        <button class="add-resident__btn add-resident__btn_reset" type="reset"><span>Сбросить</span></button>
+                        <button class="add-resident__btn add-resident__btn_add"><span>Добавить</span></button>
+                    </div>
+                </form>
             </div>
 
             <div class="filter popup__filter">
