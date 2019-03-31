@@ -1,12 +1,13 @@
-export default function createResident(name, icon, sex, floor, rooms, additional, quantity, id) {
-    return {
-        name: name,
-        icon: icon,
-        sex: sex,
-        floor: floor,
-        rooms: rooms,
-        additional: additional,
-        quantity: quantity,
-        id: id
+export default class Resident {
+    constructor(name, icon, sex, floor, flat, rooms, additional, quantity, id) {
+        this.name = name;
+        this.icon = icon;
+        this.sex = sex;
+        this.floor = floor;
+        this.flat = flat;
+        this.rooms = rooms;
+        this.additional = additional;
+        this.quantity = quantity;
+        this.id = id;
     }
 }

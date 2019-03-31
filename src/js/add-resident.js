@@ -1,8 +1,6 @@
-import createResident from './createResident';
-import store from './render';
-
-
-// localStorage.setItem("store", "[[], [], [], [], []]")
+import Resident from './createResident';
+import {render} from './render';
+import arrayOfPersons from './store';   
 
 const addBtn = document.querySelector('.add-resident__btn_add');
 
@@ -15,6 +13,7 @@ addBtn.addEventListener('click', function(e) {
     const floor = addResidentPopup.querySelector('.resident-floor__field').value;
     const roomsField = addResidentPopup.querySelector('.resident-rooms__field');
     const rooms = roomsField.options[roomsField.selectedIndex].value;
+    const flat = undefined;
     const additionalArr = addResidentPopup.querySelectorAll('.resident-info-additional__variant:checked');
     const additional = [];
     for (let i = 0; i < additionalArr.length; i++) {
@@ -22,62 +21,34 @@ addBtn.addEventListener('click', function(e) {
     }
     const quantityField = addResidentPopup.querySelector('.resident-quantity__field');
     const quantity = quantityField.options[quantityField.selectedIndex].value;
-    const id = new Date().getTime();
+    const id = 0;
     console.log(id);
     let icon = '<img src="./img/male.svg" alt="">';
 
     sex == 'Мужской' ? icon = '<img src="./img/male.svg" alt="">' : icon = '<img src="./img/female.svg" alt="">';
 
     //создаем нового человека
-    let newPerson = createResident(name, icon, sex, floor, rooms, additional, quantity, id);
+    let newPerson = new Resident(name, icon, sex, floor, flat, rooms, additional, quantity, id);
 
     //проверяем, есть ли на этаже место
-    if (store[floor - 1].length > 2) {
-        console.log('You cant do that. Its enought')
+    const maxFlats = arrayOfPersons.filter((element) => {
+        if (element.floor === floor) {
+            return element;
+        }
+    }).length;
+
+    if (maxFlats >= 3) {
+        console.log('too much');
     } else {
-
-        store[floor - 1].push(newPerson);
-        console.log(store);
-
-        // newPerson = JSON.stringify(newPerson);
-        // localStorage.setItem(name, newPerson);
-
-        let storeStr = JSON.stringify(store);
-
-        localStorage.setItem("store", storeStr);
-
-        // let mylocalStorage = JSON.parse(localStorage.getItem('store'));
-        
-        // mylocalStorage[floor - 1].push(newPerson);
-        // // console.log(mylocalStorage[floor - 1]); 
-
-        // localStorage.setItem("store", JSON.stringify(mylocalStorage));
+        newPerson.flat = maxFlats;
+        newPerson.id = (newPerson.flat + 1).toString() + floor;
+        arrayOfPersons.push(newPerson);
+        console.log(arrayOfPersons);
+        let arrayOfPersonsStr = JSON.stringify(arrayOfPersons);
+        localStorage.setItem("arrayOfPersons", arrayOfPersonsStr);
         console.log(localStorage);
-
-        // localStorage = JSON.stringify(mylocalStorage);
-
-        
-
-        // localStorage.setItem(name, newPerson);
     }
 
-    //получаем коллекцию всех этажей
-    const floors = document.querySelectorAll('.house__floor');
-
-    //получаем нужный нам этаж в доме
-    const houseFloor = floors[floor - 1];
-
-    //получаем на этом этаже все квартиры
-    const houseFlats = houseFloor.querySelectorAll('.house__flat');
-
-    //store[floor - 1] = нужному массиву
-    //его индекс lenght - 1 = квартире, в которую поселили человека
-    const houseFlat = houseFlats[store[floor - 1].length - 1];
-
-    //добавляем иконку человека в дом
-    // const try = localStorage.getItem(name).icon;
-    // console.log(try);
-    // console.log(localStorage.getItem(name));
-    houseFlat.innerHTML = icon;
+    render(arrayOfPersons);
 })
 

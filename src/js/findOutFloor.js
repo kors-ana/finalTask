@@ -8,6 +8,9 @@ let floor;
 floorsContainer.addEventListener('click', function(e) {
     let target = e.target;
 
+    document.querySelector('.resident-floor__field').removeAttribute('disabled');
+    document.querySelector('.add-resident__btn_add').removeAttribute('disabled');
+
     while (target != floorsContainer) {
 
         if (target.classList.contains('house__floor')) {
