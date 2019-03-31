@@ -1,6 +1,8 @@
 import createResident from './createResident';
 
-const store = [[], [], [], [], []];
+let store = [[], [], [], [], []];
+
+// localStorage.setItem("store", "[[], [], [], [], []]")
 
 const addBtn = document.querySelector('.add-resident__btn_add');
 
@@ -20,22 +22,43 @@ addBtn.addEventListener('click', function(e) {
     }
     const quantityField = addResidentPopup.querySelector('.resident-quantity__field');
     const quantity = quantityField.options[quantityField.selectedIndex].value;
+    const id = new Date().getTime();
+    console.log(id);
     let icon = '<img src="./img/male.svg" alt="">';
 
     sex == 'Мужской' ? icon = '<img src="./img/male.svg" alt="">' : icon = '<img src="./img/female.svg" alt="">';
 
     //создаем нового человека
-    let newPerson = createResident(name, icon, sex, floor, rooms, additional, quantity);
+    let newPerson = createResident(name, icon, sex, floor, rooms, additional, quantity, id);
 
     //проверяем, есть ли на этаже место
     if (store[floor - 1].length > 2) {
         console.log('You cant do that. Its enought')
     } else {
-        store[floor - 1].push(newPerson);
 
-        newPerson = JSON.stringify(newPerson);
+        store[floor - 1].push(newPerson);
+        console.log(store);
+
+        // newPerson = JSON.stringify(newPerson);
+        // localStorage.setItem(name, newPerson);
+
+        let storeStr = JSON.stringify(store);
+
+        localStorage.setItem("store", storeStr);
+
+        // let mylocalStorage = JSON.parse(localStorage.getItem('store'));
         
-        localStorage.setItem(name, newPerson);
+        // mylocalStorage[floor - 1].push(newPerson);
+        // // console.log(mylocalStorage[floor - 1]); 
+
+        // localStorage.setItem("store", JSON.stringify(mylocalStorage));
+        console.log(localStorage);
+
+        // localStorage = JSON.stringify(mylocalStorage);
+
+        
+
+        // localStorage.setItem(name, newPerson);
     }
 
     //получаем коллекцию всех этажей
@@ -52,7 +75,37 @@ addBtn.addEventListener('click', function(e) {
     const houseFlat = houseFlats[store[floor - 1].length - 1];
 
     //добавляем иконку человека в дом
+    // const try = localStorage.getItem(name).icon;
+    // console.log(try);
+    // console.log(localStorage.getItem(name));
     houseFlat.innerHTML = icon;
 })
+
+
+
+function render() {
+    const floors = document.querySelectorAll('.house__floor');
+    store = localStorage.getItem('store');
+    store = JSON.parse(store);
+    console.log(store);
+    if (store != undefined) {
+        for (let i = 0; i < store.length; i++) {
+
+            if (store[i].length > 0) {
+                for (let j = 0; j < store[i].length; j++) {
+                    let renderedFlat = floors[i].querySelectorAll('.house__flat')[j];
+                    console.log(j);
+                    console.log(store[i]);
+                    console.log(store[i][j]);
+                    renderedFlat.innerHTML =  store[i][j].icon
+                }
+            } 
+        }
+    }
+    return store;
+}
+
+render();
+
 
 export default store;
