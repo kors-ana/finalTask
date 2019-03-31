@@ -5,12 +5,12 @@ const params = {
 };
 
 function filter(params) {
-    let filteredArr = [];
+    let filteredArr = [[],[],[],[],[]];
     for (let i = 0; i < store.length; i++) {
-        filteredArr = store[i].filter((element) => {
+        filteredArr[i] = store[i].filter((element) => {
             for (let key in element) {
                 if (element[key] == params[key]) {
-                    return element[key];
+                    return element;
                 }
             }
 
