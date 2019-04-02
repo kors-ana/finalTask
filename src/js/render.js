@@ -1,4 +1,6 @@
-import arrayOfPersons from './store';    
+import arrayOfPersons from './store';   
+import {collectFilterFields} from './filter';
+import {filter} from './filter'; 
 
 export function render(array) {
     const floors = document.querySelectorAll('.house__floor');
@@ -10,12 +12,12 @@ export function render(array) {
                 floors[array[i].floor - 1].querySelectorAll('.house__flat')[array[i].flat].setAttribute('id', array[i].id);
             }
         }
-    }   
+    };
     
     return array;
-}
+};
 
-render(arrayOfPersons);
+render(filter(collectFilterFields()));
 
 
 export default arrayOfPersons;

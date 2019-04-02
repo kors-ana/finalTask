@@ -1,10 +1,14 @@
 import Resident from './createResident';
 import {render} from './render';
+import {collectFilterFields} from './filter';
+import {filter} from './filter';
 import arrayOfPersons from './store';   
 
 const addBtn = document.querySelector('.add-resident__btn_add');
 
 addBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    
     const addResidentPopup = document.querySelector('.add-resident');
 
     //собираем все значения с полей
@@ -15,10 +19,12 @@ addBtn.addEventListener('click', function(e) {
     const rooms = roomsField.options[roomsField.selectedIndex].value;
     const flat = undefined;
     const additionalArr = addResidentPopup.querySelectorAll('.resident-info-additional__variant:checked');
-    const additional = [];
+    let additional = [];
     for (let i = 0; i < additionalArr.length; i++) {
         additional.push(additionalArr[i].value);
     }
+    additional = additional.join(', ');
+    console.log(additional);
     const quantityField = addResidentPopup.querySelector('.resident-quantity__field');
     const quantity = quantityField.options[quantityField.selectedIndex].value;
     const id = 0;
@@ -41,7 +47,7 @@ addBtn.addEventListener('click', function(e) {
         console.log('too much');
     } else {
         newPerson.flat = maxFlats;
-        newPerson.id = (newPerson.flat + 1).toString() + floor;
+        newPerson.id = `${floor}-${newPerson.flat + 1}`;
         arrayOfPersons.push(newPerson);
         console.log(arrayOfPersons);
         let arrayOfPersonsStr = JSON.stringify(arrayOfPersons);
@@ -49,6 +55,6 @@ addBtn.addEventListener('click', function(e) {
         console.log(localStorage);
     }
 
-    render(arrayOfPersons);
+    render(filter(collectFilterFields()));
 })
 
