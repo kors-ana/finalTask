@@ -26,7 +26,6 @@ floorsContainer.addEventListener('click', function(e) {
                     floor = i + 1;
                 }
             }
-            // console.log(floorField[0].value);
             floorField[0].value = floor;
 
         } else {
@@ -37,7 +36,6 @@ floorsContainer.addEventListener('click', function(e) {
                     floor = i + 1;
                 }
             }
-            // console.log(floorField[1].value);
             floorField[1].value = floor;
         }
 

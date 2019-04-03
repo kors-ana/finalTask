@@ -3,7 +3,6 @@ import "./scss/styles.scss";
 import "./js/add-resident";
 import "./js/clean";
 import "./js/close-info-popup";
-import "./js/collectAddFields";
 import "./js/createResident";
 
 import "./js/filter/filter";

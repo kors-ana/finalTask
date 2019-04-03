@@ -5,7 +5,6 @@ import filter from './filter/filter';
 export function render(array) {
     const floors = document.querySelectorAll('.house__floor');
     if (localStorage.length > 0) {
-        console.log(array);
         if (array != undefined) {
             for (let i = 0; i < array.length; i++) {
                 // if (array[i].floor > 0) {

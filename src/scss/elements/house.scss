@@ -23,8 +23,6 @@
     &__floor {
         position: relative;
 
-        // padding: 0 35px;
-
         &:nth-child(odd) {
             background: var(--floor_odd-color);
         }
@@ -86,7 +84,6 @@
         background-color: var(--flat-inside-color);
 
         cursor: pointer;
-        // transform: rotate(-90deg);
 
         & svg {
             position: relative;
@@ -108,6 +105,11 @@
     &__footer {
         margin-top: 5px;
         margin-bottom: 20px;
+        color: var(--footer-color);
+
+        svg path:first-child {
+            fill: var(--footer-border-color);
+        }
     }
 }
 

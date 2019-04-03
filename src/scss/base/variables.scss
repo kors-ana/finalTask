@@ -20,6 +20,7 @@
     --light-purple: #8C97FD;
     --indigo: #6D7EFA;
     --purple-blue: #3E3FC4;
+    --purple-blue-dark: #4647CC;
     --night-blue: #393A59;
 
     --sandy: #FDE578;
@@ -43,6 +44,8 @@
     linear-gradient(to right, var(--brown) 30%, transparent 30%);
     --flat-borders-color: var(--dark-brown);
     --flat-inside-color: var(--snowy);
+    --footer-color: var(--dark-brown);
+    --footer-border-color: var(--chocolate);
 }
 
 :root[theme='dark'] {
@@ -57,4 +60,6 @@
     linear-gradient(to right, var(--indigo) 30%, transparent 30%);
     --flat-borders-color: var(--purple-blue);
     --flat-inside-color: var(--pink);
+    --footer-color: var(--purple-blue-dark);
+    --footer-border-color: var(--light-purple);
 }

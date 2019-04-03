@@ -1,9 +1,10 @@
-import {name, sex, floor, rooms, flat, additional, quantity, id, icon} from './collectAddFields';
+import arrayOfPersons from './store'; 
 import Resident from './createResident';
 import {render} from './render';
 import collectFilterFields from './filter/collectFilterFields';
 import filter from './filter/filter';
-import arrayOfPersons from './store';   
+  
+import validateForm from './formValidation';
 
 const addBtn = document.querySelector('.add-resident__btn_add');
 
@@ -16,7 +17,6 @@ addBtn.addEventListener('click', function(e) {
     const name = addResidentPopup.querySelector('.resident-name__field').value;
     const sex = addResidentPopup.querySelector('.resident-info-sex__variant:checked').value;
     const floor = addResidentPopup.querySelector('.resident-floor__field').value;
-    console.log(floor);
     const roomsField = addResidentPopup.querySelector('.resident-rooms__field');
     const rooms = roomsField.options[roomsField.selectedIndex].value;
     const flat = undefined;
@@ -54,6 +54,8 @@ addBtn.addEventListener('click', function(e) {
         let arrayOfPersonsStr = JSON.stringify(arrayOfPersons);
         localStorage.setItem("arrayOfPersons", arrayOfPersonsStr);
     }
+
+    // validateForm();
 
     render(filter(collectFilterFields()));
 })
