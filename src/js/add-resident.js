@@ -11,6 +11,7 @@ const addBtn = document.querySelector('.add-resident__btn_add');
 addBtn.addEventListener('click', function(e) {
     e.preventDefault();
 
+    const filterBtn = document.querySelector('.filter-btn');
     const addResidentPopup = document.querySelector('.add-resident');
 
     //собираем все значения с полей
@@ -56,7 +57,11 @@ addBtn.addEventListener('click', function(e) {
     }
 
     // validateForm();
-
-    render(filter(collectFilterFields()));
+    if (filterBtn.classList.contains('clicked')) {
+        render(filter(collectFilterFields()));
+    } else {
+        render(arrayOfPersons);
+    }
+    
 })
 

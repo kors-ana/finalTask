@@ -28,7 +28,7 @@ floorsContainer.addEventListener('click', function(e) {
             }
             floorField[0].value = floor;
 
-        } else {
+        } else if (target.classList.contains('house__floor') && tab == tabFilter.value) {
             document.querySelector('.resident-floor__field_filter').removeAttribute('disabled');
 
             for (let i = 0; i < floors.length; i++) {

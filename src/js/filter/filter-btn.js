@@ -9,5 +9,6 @@ const filterBtn = document.querySelector('.filter-btn');
 filterBtn.addEventListener('click', function() {
     clean(arrayOfPersons);
     render(filter(collectFilterFields()));
+    filterBtn.classList.add('clicked');
 });
 
