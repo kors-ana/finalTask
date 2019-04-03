@@ -1,4 +1,5 @@
 let arrayOfPersons = new Array();
+
 if (!localStorage.getItem('arrayOfPersons')) {
     localStorage.setItem('arrayOfPersons', '[]');
 } 

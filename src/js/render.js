@@ -1,6 +1,6 @@
 import arrayOfPersons from './store';   
-import {collectFilterFields} from './filter';
-import {filter} from './filter'; 
+import collectFilterFields from './filter/collectFilterFields';
+import filter from './filter/filter'; 
 
 export function render(array) {
     const floors = document.querySelectorAll('.house__floor');
@@ -8,8 +8,10 @@ export function render(array) {
         console.log(array);
         if (array != undefined) {
             for (let i = 0; i < array.length; i++) {
-                floors[array[i].floor - 1].querySelectorAll('.house__flat')[array[i].flat].innerHTML = array[i].icon;
-                floors[array[i].floor - 1].querySelectorAll('.house__flat')[array[i].flat].setAttribute('id', array[i].id);
+                // if (array[i].floor > 0) {
+                    floors[array[i].floor - 1].querySelectorAll('.house__flat')[array[i].flat].innerHTML = array[i].icon;
+                    floors[array[i].floor - 1].querySelectorAll('.house__flat')[array[i].flat].setAttribute('id', array[i].id);
+                // }
             }
         }
     };
